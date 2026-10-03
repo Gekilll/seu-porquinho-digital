@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar gastos - Seu Porquinho Digital</title>
+    <!-- Conexão ao CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/gasto.png" type="image/png">
+    <!-- Conexão ao JavaScript-->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Contêiner que abrange tudo -->
+    <div class="sitetodo">
+        <!-- Contêiner que abrange a área do título, logo e explicação da página -->
+        <div class="titulo">
+            <h1 class="sr-only">Cadastrar gastos</h1>
+            <img src="imagens/porcao.webp" alt="Porquinho Digital" width="800" height="450">
+            <p>Cadastre seus gastos e acompanhe suas finanças de forma prática e eficiente. Registre cada despesa e mantenha o controle do seu orçamento.</p>
+        </div>
+
+        <div class="formulario">
+            <div class="resumo">
+                <!-- Cards que indicam situação financeira -->
+                <div class="card"><small>Usuário</small><strong id="nomeUsuario"></strong></div>
+                <div class="card"><small>Saldo inicial</small><strong id="saldoInicial">R$ 0,00</strong></div>
+                <div class="card"><small>Saldo atual</small><strong id="saldoAtual">R$ 0,00</strong></div>
+            </div>
+
+            <!-- Alerta vermelho (aparece só quando o saldo fica negativo) -->
+            <div id="alertaOrcamento" role="alert" hidden></div>
+
+            <form id="gastoForm">
+                <!-- Área de cadastro dos gastos -->
+                <h2>Cadastrar gasto</h2>
+                <!-- Local onde preenche o nome do gasto -->
+                <label for="gasto">Nome do gasto:</label>
+                <input id="gasto" type="text" name="gasto" placeholder="Digite o nome do gasto" maxlength="80" required>
+
+                <!-- Local onde preenche a quantia em real do gasto -->
+                <label for="valor">Valor (R$):</label>
+                <input id="valor" type="number" name="valor" placeholder="0,00" min="0.01" step="0.01" inputmode="decimal" required>
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Cadastrar">
+                <!-- Mensagens de erro de validação -->
+                <div id="mensagemGasto" class="mensagem" aria-live="polite" hidden></div>
+            </form>
+
+            <!-- Lista em que ficam os gastos e seus valores -->
+            <section class="lista-gastos">
+                <h2>Gastos cadastrados</h2>
+                <div id="listaGastos"></div>
+
+                <!-- Botão de apagar os gastos cadastrados -->
+                <button type="button" id="limparGastos" class="botao-secundario">Limpar gastos</button>
+            </section>
+        </div>
+
+        <!-- Menu da página -->
+        <nav class="sidebar" aria-label="Menu principal">
+            <h2 class="menu-titulo">Menu</h2>
+            <a href="index.html">Início</a>
+            <a href="gastos.html" class="ativo" aria-current="page">Cadastrar gastos</a>
+        </nav>
+    </div>
+</body>
+</html>

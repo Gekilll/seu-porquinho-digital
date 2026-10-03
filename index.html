@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Porquinho Digital</title>
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/porco.png" type="image/png">
+    <!-- Conexão com o CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Conexão com o JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Contêiner que abrange todo o site -->
+    <div class="sitetodo">
+        <!-- Contêiner que abrange a área do título, logo e explicação da página -->
+        <div class="titulo">
+            <h1 class="sr-only">Seu Porquinho Digital</h1>
+            <img src="imagens/porquinho.webp" alt="Logo Seu Porquinho Digital" width="800" height="481">
+            <p>Aqui você poderá organizar sua vida financeira através de uma ferramenta que o auxilia a acompanhar seus gastos e compreender melhor sua situação financeira.</p>
+        </div>
+
+        <!-- Contêiner que abrange o formulário utilizado para coleta de dados iniciais -->
+        <div class="formulario">
+            <form id="dadosIniciaisForm">
+                <!-- Título do formulário -->
+                <h2>Comece seu controle financeiro</h2>
+                <!-- Local onde preenche o nome do usuário -->
+                <label for="nome">Usuário:</label>
+                <input id="nome" type="text" name="nome" placeholder="Nome" maxlength="50" autocomplete="given-name" required>
+
+                <!-- Local onde preenche o orçamento inicial -->
+                <label for="dinheiro">Dinheiro disponível (R$):</label>
+                <input id="dinheiro" type="number" name="dinheiro" placeholder="999999" min="0" max="1000000" step="0.01" inputmode="decimal" required>
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <!-- Menu do site -->
+        <nav class="sidebar" aria-label="Menu principal">
+            <h2 class="menu-titulo">Menu</h2>
+            <a href="index.html" class="ativo" aria-current="page">Início</a>
+            <a href="gastos.html">Cadastrar gastos</a>
+        </nav>
+    </div>
+</body>
+</html>
